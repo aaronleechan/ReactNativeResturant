@@ -1,7 +1,8 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
-import Card from './Card';
-import CardSection from './CardSection';
+import { Card } from './common/Card';
+import { CardSection } from './common/CardSection';
+import { Button } from './common/Button';
 
 const MenuDetail = ({food}) => {
     const { foodname, foodprice, foodimage } = food;
@@ -14,14 +15,20 @@ const MenuDetail = ({food}) => {
                     <Text style={styles.foodpriceStyle}>{foodprice}$</Text>
                 </View> 
             </CardSection>
-            <CardSection>
-                <Image 
-                    style={styles.imageStyle} 
-                    source={{ uri: foodimage }} 
-                />
-            </CardSection>
+            
+            {foodimage ? 
+                <CardSection>
+                    <Image 
+                        style={styles.imageStyle} 
+                        source={{ uri: foodimage }} 
+                    />
+                </CardSection> 
+
+                : console.log("image not exist") 
+            }
+            
             <CardSection style={styles.buttonStyle}>
-                <Text>Edit</Text>
+                <Button label="Edit"/>
             </CardSection>
         </Card>
     )
@@ -44,9 +51,11 @@ const styles = {
         fontSize: 20,        
     },
     imageStyle: {
+        flex: 1,
         justifyContent: 'center',
-        height: 40,
-        width: 40,
+        alignItems: 'center',
+        height: 250,
+        width: 300,
         paddingTop: 15,
     }
 }
