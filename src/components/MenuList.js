@@ -4,6 +4,7 @@ import axios from 'axios';
 import firebase from '../../firebase_setup';
 import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
 import MenuListDetail from './MenuListDetail';
+import { ScrollView } from 'react-native';
 
 class MenuList extends Component{
 
@@ -28,9 +29,9 @@ class MenuList extends Component{
 
     render(){
         return(
-            <View>
+            <ScrollView>
                 {this.renderMenuList(this.state.menu)}
-            </View>
+            </ScrollView>
         )
     }
 }
@@ -45,6 +46,7 @@ const styles = {
     foodpriceStyle:{
         fontSize: 25,
     },
+
 }
 
 export default MenuList;

@@ -18,4 +18,5 @@ class CreateMenu extends Component{
         );
     }
 }
+
 export default CreateMenu;

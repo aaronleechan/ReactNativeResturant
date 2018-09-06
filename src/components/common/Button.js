@@ -1,23 +1,18 @@
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 
-const Button = () => {
+const Button = (props) => {
 
     const {buttonStyle, textStyle} = styles;
 
     return(
-        <TouchableOpacity style={buttonStyle} onPress={addMenu}>
+        <TouchableOpacity onPress={props.onPress} style={buttonStyle}>
             <Text style={textStyle}> 
-                Add Menu 
+                {props.label}
             </Text>
         </TouchableOpacity>
     );
 };
-
-const addMenu = () => {
-    console.log(" Click the ADD MENU Button ");
-    console.log("...........................");
-}
 
 const styles = {
     textStyle: {
@@ -40,4 +35,4 @@ const styles = {
     }
 }
 
-export default Button;
+export { Button };

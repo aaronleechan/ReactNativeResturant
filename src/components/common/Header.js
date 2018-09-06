@@ -4,15 +4,15 @@
 
 import React from 'react';
 import {Text, View, Image} from 'react-native';
-import Button from './Button'
+import {Button} from './Button';
+
 
 const Header  = (props) => {
 
     return(
         <View style = {styles.viewStyle}>
-            <Image style={styles.imageStyle} source={require('../images/aaronlogo.jpg')} />
-            <Text style={styles.textStyle}>{props.name} Home Page</Text>
-            <Button/>
+            <Image style={styles.imageStyle} source={require('../../images/aaronlogo.jpg')} />
+            <Text style={styles.textStyle}>{props.name}</Text>
         </View>
     )
 };
@@ -39,4 +39,4 @@ const styles = {
     }
 }
 
-export default Header;
+export {Header};
