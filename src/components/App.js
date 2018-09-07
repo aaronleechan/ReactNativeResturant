@@ -28,10 +28,13 @@ class App extends Component{
         switch(this.state.loggedIn){
             case true:
                 return(
-                    <View>
-                        <Button onPress={() => firebase.auth().signOut()} label="Log Out" />
-                        <AddMenu/>
-                        <MenuList/>
+                    <View style={{flex: 1}}>
+                        <View style={{flex: 1}}>
+                            <Button onPress={() => firebase.auth().signOut()} label="Log Out" />
+                        </View>
+                        <View style={{flex: 15}}>
+                            <MenuList/>
+                        </View>
                     </View>
                 );
             case false:
@@ -50,5 +53,7 @@ class App extends Component{
         );
     }
 }
+
+
 
 export default App;
