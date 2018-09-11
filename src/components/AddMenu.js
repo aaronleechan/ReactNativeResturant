@@ -42,7 +42,7 @@ class AddMenu extends Component{
     render(){
         return(
             <View>
-                {/* <Button  title="Add Menu" color="#841584" /> */}
+                <Text>Add Menu</Text>
             </View>
         );
     }

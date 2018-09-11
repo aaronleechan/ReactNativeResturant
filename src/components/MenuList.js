@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
-import {Text, View, Image, Button} from 'react-native';
+import {Text, View, Image} from 'react-native';
 import axios from 'axios';
 import firebase from '../../firebase_setup';
 import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
 import MenuListDetail from './MenuListDetail';
 import { ScrollView } from 'react-native';
+import { Button } from './common/Button';
 
 class MenuList extends Component{
 
@@ -31,6 +32,7 @@ class MenuList extends Component{
         return(
             <ScrollView>
                 {this.renderMenuList(this.state.menu)}
+                <Button label="ADD Menu"/>
             </ScrollView>
         )
     }
@@ -46,7 +48,6 @@ const styles = {
     foodpriceStyle:{
         fontSize: 25,
     },
-
 }
 
 export default MenuList;
